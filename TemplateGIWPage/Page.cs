@@ -5,21 +5,20 @@ using System.Collections.Generic;
 
 [assembly: InfoWatchCompatible]
 
-namespace GorillaChatBox.InfoWatch
+namespace TemplateGIWPage // note: i had it before set to gorillachatbox's namespace, im very dumb so i copied some parts, sorry, but i changed it as this is its own thing, you can change it to whatever you want idc go crazy with it, just make sure to change the namespace in the plugininfo file as well if you do change this.
 {
     [ShowOnHomeScreen]
     internal class Test : InfoScreen
     {
-        public override string Title => "Test";
-        public bool value1 = false;
-        float Number = 1;
-        public override string Description => "GIW test page";
+        public override string Title => "Template"; // button name here
+        public bool value1 = false; //the value for the switch
+        float Number = 1; // the value for the slider
+        public override string Description => "Template by sigmatherian!"; // description, but if you want you can keep this one, i would like that but idc really tbh
 
         public override InfoContent GetContent()
         {
             LineBuilder lines = new();
-            lines.Append("If you see this, GIW works."); //dont mind this, i just didnt know much about how Info Watch worked when I made this so it just straight up dont work.
-            return lines;
+            
             lines.Add(
                 "Switch", // the switch, can toggle a speed boost or something, its up to you so go wild, just make sure that you follow the steps for the value!
                 new List<Widget_Base>
@@ -65,6 +64,9 @@ namespace GorillaChatBox.InfoWatch
     }
 );
 
+            return lines; // ALWAYS put this at the end of the code or else your other buttons WONT WORK! (i think, i dont wanna build it rn lol)
         }
+
     }
+
 }
